@@ -293,6 +293,7 @@ class RelPartialLearnableMultiHeadAttn(RelMultiHeadAttn):
 
         return output
 
+# learnable token
 class RelLearnableMultiHeadAttn(RelMultiHeadAttn):
     def __init__(self, *args, **kwargs):
         super(RelLearnableMultiHeadAttn, self).__init__(*args, **kwargs)

@@ -55,7 +55,8 @@ MAP_TO_TARGET_REWARD = {
     'Breakout' : 180,
     'Qbert' : 14000,
     'Seaquest' : 1150,
-    'Pong' : 20
+    'Pong' : 20,
+    'TOTO': 140
 }
 
 class Args:
