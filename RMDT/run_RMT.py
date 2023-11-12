@@ -124,6 +124,7 @@ args.init = 'uniform'
 args.init_range = 1
 args.init_std = 1
 
+# atari env
 def take_fire_action(env):
     """Some games requires the agent to press 'FIRE' to start the game once loss a life."""
     assert env.unwrapped.get_action_meanings()[1] == 'FIRE'
