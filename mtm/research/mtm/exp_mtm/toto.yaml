@@ -12,7 +12,7 @@ tokenizers:
 
 
 dataset:
-    path: "../../../data_check.pkl"
+    path: "../../data_check.pkl"
 
 
 args:
