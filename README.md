@@ -39,9 +39,13 @@ For more detailed dataset format information, see `assets/README.md`
 We present 3 models:
 - Decision Transformer
 - Recurrent Memory Decision Transformer
-- Masked Transformer Model
+- Masked Trajectory Model
 
 ### DT
+Decision Transformer ([DT](https://arxiv.org/pdf/2106.01345.pdf)) simply outputs the optimal actions by leveraging a causally masked Transformer.
+The model receives an RGB image and the robot’s joint angles: the former is embedded using MoCo (In-Domain) and concatenated with the latter at each step. DT uses a sub-sampling period of 8 and a history window of 10 frames. For inference and evaluation, the target return prompt is approximately chosen as the mean return from the top 10% of trajectories in the dataset for each task. 
+[TOTO](https://arxiv.org/pdf/2306.00942.pdf)
+
 
 ### RMDT
 
@@ -62,3 +66,11 @@ python toto_benchmark/scripts/test_stub_env.py -f=toto_benchmark/outputs/collabo
 ```
 
 ### MTM
+
+[MTM](https://arxiv.org/pdf/2305.02968.pdf) uses masking in the input sequence and reconstructs the full original sequence. This way it gets more general knowledge of the world, can perform different tasks and performs better than DT on HalfCheetah, Hopper, Walker2d environments. 
+
+To start training on TOTO Dataset run `mtm/toto_train.ipynb`
+
+![model-pipeline](docs/images/masking_patterns.png)
+
+
